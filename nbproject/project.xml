@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>TA-2016-6N1-Sistema-Imobiliario</name>
+            <name>TA-2016-6N1-Model-Sistema-Imobiliario</name>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
