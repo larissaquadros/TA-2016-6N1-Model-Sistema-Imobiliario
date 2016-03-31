@@ -71,7 +71,7 @@ public class Contrato implements Serializable{
     @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = false)
     private Pessoa pessoa;
 
-    @OneToMany(mappedBy = "cobrancaAluguelID.contrato", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cobrancaID.contrato", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CobrancaAluguel> listaCobrancas = new ArrayList<>();
     
     @NotNull(message = "A quantidade de cobrancas deve ser informado")

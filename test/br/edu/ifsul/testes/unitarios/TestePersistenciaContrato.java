@@ -5,7 +5,6 @@
  */
 package br.edu.ifsul.testes.unitarios;
 
-import br.edu.ifsul.modelo.Caracteristica;
 import br.edu.ifsul.modelo.Contrato;
 import br.edu.ifsul.modelo.Imovel;
 import br.edu.ifsul.modelo.Pessoa;
