@@ -178,7 +178,7 @@ public class Contrato implements Serializable{
         this.listaCobrancas = listaCobrancas;
     }
     
-    public void gerarParcelas(){
+    public void gerarCobrancas(){
         Double valorCobranca = this.aluguel;
         for(int i = 1; i <= this.quantidade_cobrancas ; i++){
             CobrancaAluguel c = new CobrancaAluguel();

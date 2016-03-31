@@ -50,7 +50,7 @@ public class TestePersistenciaGerarCobrancasAluguel {
         try{
                        
             Contrato c = em.find(Contrato.class, 4);
-            c.gerarParcelas();
+            c.gerarCobrancas();
       
                     
             em.getTransaction().begin();
