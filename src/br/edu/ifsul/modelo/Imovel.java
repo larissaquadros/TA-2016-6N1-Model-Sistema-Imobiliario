@@ -76,13 +76,13 @@ public class Imovel implements Serializable{
     @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = true)
     private Pessoa proprietario;
     
-//    @ManyToMany
-//    @JoinTable(name = "caracteristicas",
-//            joinColumns = 
-//            @JoinColumn(name = "imovel", referencedColumnName = "id"), 
-//            inverseJoinColumns = 
-//            @JoinColumn(name = "caracteristica", referencedColumnName = "id"))    
-//    private List<Caracteristica> caracteristicas = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "caracteristicas_imovel",
+            joinColumns = 
+            @JoinColumn(name = "imovel", referencedColumnName = "id"), 
+            inverseJoinColumns = 
+            @JoinColumn(name = "caracteristica", referencedColumnName = "id"))    
+    private List<Caracteristica> caracteristicas = new ArrayList<>();
 
     public Imovel() {
     }
@@ -175,6 +175,15 @@ public class Imovel implements Serializable{
     public void setNumero(String numero) {
         this.numero = numero;
     }
+
+    public List<Caracteristica> getCaracteristicas() {
+        return caracteristicas;
+    }
+
+    public void setCaracteristicas(List<Caracteristica> caracteristicas) {
+        this.caracteristicas = caracteristicas;
+    }
+    
     
     
 }

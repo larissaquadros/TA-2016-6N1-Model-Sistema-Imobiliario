@@ -6,9 +6,13 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +20,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -74,8 +79,22 @@ public abstract class Pessoa implements Serializable{
     @JoinColumn(name = "cidade", referencedColumnName = "id", nullable = false)
     private Cidade cidade;
 
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, 
+            orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Telefone> telefones = new ArrayList<>();
+    
     public Pessoa() {
     }
+    
+    public void adicionarTelefone(Telefone obj){
+        obj.setPessoa(this);
+        this.telefones.add(obj);
+    }
+    
+    public void removerTelefone(int index){
+        this.telefones.remove(index);
+    }
+
     
     public Integer getId() {
         return id;

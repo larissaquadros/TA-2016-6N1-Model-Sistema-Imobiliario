@@ -7,11 +7,8 @@ package br.edu.ifsul.testes.unitarios;
 
 import br.edu.ifsul.modelo.Caracteristica;
 import br.edu.ifsul.modelo.Cidade;
-import br.edu.ifsul.modelo.Condominio;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.Imovel;
-import br.edu.ifsul.modelo.Imovel_;
-import br.edu.ifsul.modelo.Pessoa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -24,12 +21,12 @@ import org.junit.Test;
  *
  * @author Larissa
  */
-public class TestePersistenciaImovel {
+public class TestePersistenciaCaracteristicaImovel {
     
     EntityManagerFactory emf;
     EntityManager em;
     
-    public TestePersistenciaImovel() {
+    public TestePersistenciaCaracteristicaImovel() {
     }
     
     @Before
@@ -50,20 +47,15 @@ public class TestePersistenciaImovel {
 
         //testar persistencia
         try{
-                  
-            Imovel i = new Imovel();
-            
-            i.setCondominio(em.find(Condominio.class, 1));
-            i.setCidade(em.find(Cidade.class, 1));
-            i.setProprietario(em.find(Pessoa.class, 1));
-            i.setBairro("Petrópolis");
-            i.setEndereco("Avenida Brasil Leste");
-            i.setNumero("544");
-            i.setComplemento("Ap 23");
                        
+            Imovel obj = em.find(Imovel.class, 6);
+            Caracteristica ca = em.find(Caracteristica.class, 5);
+            obj.getCaracteristicas().add(ca);
+      
                     
             em.getTransaction().begin();
-            em.persist(i);            
+            em.persist(obj);
+            
             em.getTransaction().commit();
         }catch(Exception e){
             exception = true;
