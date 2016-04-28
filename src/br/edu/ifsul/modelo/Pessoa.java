@@ -24,6 +24,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -49,8 +50,7 @@ public abstract class Pessoa implements Serializable{
     @Column(name = "nome", length = 150, nullable = false)
     private String nome;
     
-    @NotEmpty
-    @NotBlank(message = "o email deve ser informado")    
+    @Email(message = "Informe um email valido")   
     @Length(max = 50, message = "O email deve possui até {max} caracteres.")
     @Column(name = "email", length = 50, nullable = false)
     private String email;

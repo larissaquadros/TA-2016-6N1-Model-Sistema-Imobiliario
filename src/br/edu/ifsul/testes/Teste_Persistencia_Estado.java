@@ -6,7 +6,6 @@
 package br.edu.ifsul.testes;
 
 import br.edu.ifsul.modelo.Estado;
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

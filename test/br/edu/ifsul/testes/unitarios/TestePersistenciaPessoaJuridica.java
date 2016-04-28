@@ -6,7 +6,6 @@
 package br.edu.ifsul.testes.unitarios;
 
 import br.edu.ifsul.modelo.Cidade;
-import br.edu.ifsul.modelo.PessoaFisica;
 import br.edu.ifsul.modelo.PessoaJuridica;
 import java.util.Calendar;
 import java.util.GregorianCalendar;

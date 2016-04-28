@@ -48,7 +48,7 @@ public class TestePersistenciaCondominio {
         try{
             
             Condominio c = new Condominio();
-            c.setNome("San Martim");
+            c.setNome("Residencial Araucária");
             c.setCidade(em.find(Cidade.class, 1));
             c.setBairro("Petrópolis");
             c.setEndereco("Avenida Brasil Leste");
