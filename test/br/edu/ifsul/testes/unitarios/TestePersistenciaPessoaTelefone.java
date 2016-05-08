@@ -49,7 +49,7 @@ public class TestePersistenciaPessoaTelefone {
         //testar persistencia
         try{
             
-            PessoaFisica pf = em.find(PessoaFisica.class, 1);
+            PessoaFisica pf = em.find(PessoaFisica.class, 23);
             Telefone t = new Telefone();
             t.setNumero("(54)3333-9067");
             t.setDescricao("Celular");

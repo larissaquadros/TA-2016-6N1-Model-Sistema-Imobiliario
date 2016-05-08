@@ -7,8 +7,11 @@ package br.edu.ifsul.testes.unitarios;
 
 import br.edu.ifsul.modelo.Caracteristica;
 import br.edu.ifsul.modelo.Cidade;
+import br.edu.ifsul.modelo.Condominio;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.Imovel;
+import br.edu.ifsul.modelo.Imovel_;
+import br.edu.ifsul.modelo.Pessoa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -21,12 +24,12 @@ import org.junit.Test;
  *
  * @author Larissa
  */
-public class TestePersistenciaCaracteristicaImovel {
+public class TestePersistenciaImovelCondominio {
     
     EntityManagerFactory emf;
     EntityManager em;
     
-    public TestePersistenciaCaracteristicaImovel() {
+    public TestePersistenciaImovelCondominio() {
     }
     
     @Before
@@ -47,15 +50,15 @@ public class TestePersistenciaCaracteristicaImovel {
 
         //testar persistencia
         try{
+                          
                        
-            Imovel obj = em.find(Imovel.class, 6);
-            Caracteristica ca = em.find(Caracteristica.class, 4);
-            obj.getCaracteristicas().add(ca);
-      
+            Condominio c = em.find(Condominio.class, 6);
+            Imovel i = em.find(Imovel.class, 13);
+            c.adicionarImovel(i);
+                       
                     
             em.getTransaction().begin();
-            em.persist(obj);
-            
+            em.persist(c);            
             em.getTransaction().commit();
         }catch(Exception e){
             exception = true;

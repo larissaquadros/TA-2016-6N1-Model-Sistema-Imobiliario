@@ -53,9 +53,9 @@ public class TestePersistenciaImovel {
                   
             Imovel i = new Imovel();
             
-            i.setCondominio(em.find(Condominio.class, 1));
+            Condominio c = em.find(Condominio.class, 1);
             i.setCidade(em.find(Cidade.class, 1));
-            i.setProprietario(em.find(Pessoa.class, 1));
+            i.setProprietario(em.find(Pessoa.class, 23));
             i.setBairro("Petrópolis");
             i.setEndereco("Avenida Brasil Leste");
             i.setNumero("544");
