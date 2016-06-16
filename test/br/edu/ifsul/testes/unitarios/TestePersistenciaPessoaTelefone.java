@@ -9,6 +9,7 @@ import br.edu.ifsul.modelo.Caracteristica;
 import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.PessoaFisica;
+import br.edu.ifsul.modelo.PessoaJuridica;
 import br.edu.ifsul.modelo.Telefone;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -49,7 +50,7 @@ public class TestePersistenciaPessoaTelefone {
         //testar persistencia
         try{
             
-            PessoaFisica pf = em.find(PessoaFisica.class, 23);
+            PessoaJuridica pf = em.find(PessoaJuridica.class, 24);
             Telefone t = new Telefone();
             t.setNumero("(54)3333-9067");
             t.setDescricao("Celular");

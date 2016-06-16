@@ -53,12 +53,11 @@ public class TestePersistenciaContrato {
             c.setAluguel(400.00);
             c.setObservacao("Teste");
             c.setPessoa(em.find(Pessoa.class, 23));
-            c.setImovel(em.find(Imovel.class, 7));
+            c.setImovel(em.find(Imovel.class, 14));
             c.setData_inicio(new GregorianCalendar(1995, Calendar.FEBRUARY, 14));
             c.setData_reajuste(new GregorianCalendar(1995, Calendar.FEBRUARY, 14));
             c.setData_encerramento(new GregorianCalendar(1995, Calendar.FEBRUARY, 14));
-            c.setQuantidade_cobrancas(12);
-            
+            c.setQuantidade_cobrancas(12);            
             
             em.getTransaction().begin();
             em.persist(c);

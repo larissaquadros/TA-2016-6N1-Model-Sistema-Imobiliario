@@ -189,6 +189,15 @@ public abstract class Pessoa implements Serializable{
     public String toString() {
         return "Pessoa{" + "nome=" + nome + '}';
     }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
+    }
+    
     
     
 }
