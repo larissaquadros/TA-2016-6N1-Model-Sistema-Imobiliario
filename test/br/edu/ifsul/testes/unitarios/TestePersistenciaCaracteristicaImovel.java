@@ -48,8 +48,8 @@ public class TestePersistenciaCaracteristicaImovel {
         //testar persistencia
         try{
                        
-            Imovel obj = em.find(Imovel.class, 6);
-            Caracteristica ca = em.find(Caracteristica.class, 4);
+            Imovel obj = em.find(Imovel.class, 15);
+            Caracteristica ca = em.find(Caracteristica.class, 1);
             obj.getCaracteristicas().add(ca);
       
                     

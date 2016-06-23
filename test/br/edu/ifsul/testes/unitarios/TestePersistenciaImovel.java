@@ -51,19 +51,13 @@ public class TestePersistenciaImovel {
         //testar persistencia
         try{
                   
-            Imovel i = new Imovel();
+            Imovel i = em.find(Imovel.class, 21);
             
-            Condominio c = em.find(Condominio.class, 1);
-            i.setCidade(em.find(Cidade.class, 1));
-            i.setProprietario(em.find(Pessoa.class, 23));
-            i.setBairro("Petrópolis");
-            i.setEndereco("Avenida Brasil Leste");
-            i.setNumero("544");
-            i.setComplemento("Ap 23");
-                       
+            
+            
                     
             em.getTransaction().begin();
-            em.persist(i);            
+            em.remove(i);            
             em.getTransaction().commit();
         }catch(Exception e){
             exception = true;
