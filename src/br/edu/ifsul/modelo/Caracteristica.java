@@ -39,14 +39,13 @@ public class Caracteristica implements Serializable{
     @Length(max = 50, message = "O nome deve possui até {max} caracteres.")
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
-    
+       
     @ManyToMany
-    @JoinTable(name = "veiculos_opcionais",
-            joinColumns = 
-            @JoinColumn(name = "caracteritica", referencedColumnName = "id"), 
-            inverseJoinColumns = 
-            @JoinColumn(name = "imovel", referencedColumnName = "id"))
-    private List<Imovel> imoveis = new ArrayList<>();
+    @JoinTable(name = "caracteristicas_imovel", joinColumns = 
+                                        @JoinColumn(name = "caracteristica", referencedColumnName = "id", nullable = false),
+                                inverseJoinColumns =
+                                        @JoinColumn(name = "imovel", referencedColumnName = "id", nullable = false))
+    private List<Imovel> caracteristicas = new ArrayList<>();
 
 
     public Caracteristica() {
@@ -98,14 +97,14 @@ public class Caracteristica implements Serializable{
         return  nome ;
     }
 
-    public List<Imovel> getImoveis() {
-        return imoveis;
+    public List<Imovel> getCaracteristicas() {
+        return caracteristicas;
     }
 
-    public void setImoveis(List<Imovel> imoveis) {
-        this.imoveis = imoveis;
+    public void setCaracteristicas(List<Imovel> caracteristicas) {
+        this.caracteristicas = caracteristicas;
     }
-    
+
     
     
 }

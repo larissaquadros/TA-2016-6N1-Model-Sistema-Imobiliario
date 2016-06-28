@@ -75,12 +75,12 @@ public class Imovel implements Serializable{
     @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = true)
     private Pessoa proprietario;
     
-    @ManyToMany
-    @JoinTable(name = "caracteristicas_imovel",
-            joinColumns = 
-            @JoinColumn(name = "imovel", referencedColumnName = "id"), 
-            inverseJoinColumns = 
-            @JoinColumn(name = "caracteristica", referencedColumnName = "id"))    
+    
+    @ManyToMany //muitos apra muitos
+    @JoinTable(name = "caracteristicas_imovel", joinColumns = 
+                                        @JoinColumn(name = "imovel", referencedColumnName = "id", nullable = false),
+                                inverseJoinColumns =
+                                        @JoinColumn(name = "caracteristica", referencedColumnName = "id", nullable = false))
     private List<Caracteristica> caracteristicas = new ArrayList<>();
 
     public Imovel() {
@@ -190,5 +190,7 @@ public class Imovel implements Serializable{
     public void removerCaracteristica(int index){
         this.caracteristicas.remove(index);
     }
+    
+    
     
 }
